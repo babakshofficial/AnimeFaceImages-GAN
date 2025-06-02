@@ -1,9 +1,8 @@
 # Anime Face Images GAN
 
-This project implements a Generative Adversarial Network (GAN) to generate anime face images. The model is built using PyTorch and trained on a dataset of anime character faces.
+This project implements a Generative Adversarial Network (GAN) to generate anime face images. The model is built using PyTorch and Tensorflow, trained on a dataset of anime character faces.
 
-![Sample Generated Image 1](images/image.png)
-![Sample Generated Image 2](images/image2.png)
+![Sample Images in Dataset](images/samples.png)
 *(Add more or update these with your best generated samples)*
 
 ## Table of Contents
@@ -24,7 +23,7 @@ This project implements a Generative Adversarial Network (GAN) to generate anime
 
 Generative Adversarial Networks (GANs) are a class of machine learning frameworks where two neural networks, a Generator (G) and a Discriminator (D), contest with each other in a zero-sum game. The Generator tries to produce realistic samples (in this case, anime faces) from random noise, while the Discriminator tries to distinguish between real images from the dataset and fake images produced by the Generator. Through this adversarial process, both networks improve, leading to the Generator producing increasingly realistic images.
 
-This repository provides an implementation of a GAN specifically for generating anime faces. The core logic and model definitions can be found in the `AnimeFaceImagesGAN.ipynb` Jupyter Notebook.
+This repository provides an implementation of a GAN specifically for generating anime faces. The core logic and model definitions can be found in the `anime-face-image-gan-pytorch.ipynb` and `anime-face-image-gan-tensorflow.ipynb` Jupyter Notebooks.
 
 ## Dataset
 
@@ -32,7 +31,7 @@ The model is trained on a dataset of anime character faces. You will need to pro
 
 1.  **Download the dataset.**
 2.  **Organize the dataset:** Ensure all face images are in a single directory.
-3.  **Place the dataset:** Create a directory named `dataset` in the root of this project and place all your image files into `dataset/your_image_folder_name/`. The notebook `AnimeFaceImagesGAN.ipynb` will need to be updated to point to the correct path if it's different from the default expected (e.g., `dataset/images/`).
+3.  **Place the dataset:** Create a directory named `dataset` in the root of this project and place all your image files into `dataset/your_image_folder_name/`. The notebooks will need to be updated to point to the correct path if it's different from the default expected (e.g., `dataset/images/`).
 
 **Example structure:**
 ```
@@ -56,14 +55,16 @@ The primary requirements for this project are:
 * Python 3.x
 * PyTorch
 * Torchvision
+* Tensorflow
 * NumPy
 * Matplotlib
 * Jupyter Notebook (for running the `.ipynb` file)
 
 You can install these using pip:
 ```bash
-pip install torch torchvision torchaudio
+pip install tensorflow
 pip install numpy matplotlib jupyter
+pip install torch torchvision torchaudio
 ```
 
 It is highly recommended to use a virtual environment.
@@ -96,7 +97,7 @@ It is highly recommended to use a virtual environment.
     ```bash
     jupyter notebook AnimeFaceImagesGAN.ipynb
     ```
-2.  **Modify dataset path (if needed):** Inside the notebook, locate the section where the dataset is loaded (e.g., using `ImageFolder` from `torchvision.datasets`). Ensure the path correctly points to your dataset directory.
+2.  **Modify dataset path (if needed):** Inside the notebook, locate the section where the dataset is loaded. Ensure the path correctly points to your dataset directory.
 3.  **Run the cells:** Execute the cells in the notebook sequentially to define the model, load data, train the GAN, and generate images.
 4.  **View results:** The notebook should display generated images at various stages of training and at the end.
 
@@ -124,19 +125,7 @@ The training process involves alternating updates to the Discriminator and the G
     * Calculate G's loss by comparing D's predictions for these fake images to "real" labels (i.e., G wants D to classify its fakes as real).
     * Update G's weights via backpropagation (only G's weights are updated in this step).
 
-This process is repeated for a specified number of epochs. The notebook `AnimeFaceImagesGAN.ipynb` contains the implementation of this training loop. Hyperparameters such as learning rate, batch size, and the number of epochs can be adjusted within the notebook.
-
-## Results
-
-*(This is a good place to showcase more of your generated images, perhaps at different stages of training or with different latent vectors. You can also include any quantitative metrics if you've used them, like FID or Inception Score, though these are more common in larger GAN projects.)*
-
-**Example:**
-
-After X epochs of training, the generator is capable of producing images like:
-
-```
-[Insert a grid of your best generated images here]
-```
+This process is repeated for a specified number of epochs. The notebooks contains the implementation of this training loop. Hyperparameters such as learning rate, batch size, and the number of epochs can be adjusted within the notebook.
 
 ## Future Work
 
@@ -161,4 +150,3 @@ Contributions are welcome! If you have suggestions for improvements or want to c
 * The PyTorch team for their excellent deep learning framework.
 * The creators of the Anime Face Dataset.
 * Inspiration from various GAN tutorials and research papers.
-*(Add any other specific acknowledgements if applicable)*
