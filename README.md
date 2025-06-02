@@ -3,7 +3,6 @@
 This project implements a Generative Adversarial Network (GAN) to generate anime face images. The model is built using PyTorch and Tensorflow, trained on a dataset of anime character faces.
 
 ![Sample Images in Dataset](images/samples.png)
-*(Add more or update these with your best generated samples)*
 
 ## Table of Contents
 - [Project Description](#project-description)
@@ -32,6 +31,9 @@ The model is trained on a dataset of anime character faces. You will need to pro
 1.  **Download the dataset.**
 2.  **Organize the dataset:** Ensure all face images are in a single directory.
 3.  **Place the dataset:** Create a directory named `dataset` in the root of this project and place all your image files into `dataset/your_image_folder_name/`. The notebooks will need to be updated to point to the correct path if it's different from the default expected (e.g., `dataset/images/`).
+   
+![Dataset Image Properties](images/dataset.png)
+
 
 **Example structure:**
 ```
@@ -126,6 +128,15 @@ The training process involves alternating updates to the Discriminator and the G
     * Update G's weights via backpropagation (only G's weights are updated in this step).
 
 This process is repeated for a specified number of epochs. The notebooks contains the implementation of this training loop. Hyperparameters such as learning rate, batch size, and the number of epochs can be adjusted within the notebook.
+
+## Results
+
+After 70 epochs of training, the generator is capable of producing images like:
+
+```
+![Generated Images(images/images.png)
+![Face Interpolation](images/interpolation.png)
+```
 
 ## Future Work
 
