@@ -133,10 +133,8 @@ This process is repeated for a specified number of epochs. The notebooks contain
 
 After 70 epochs of training, the generator is capable of producing images like:
 
-```
 ![Generated Images(images/images.png)
 ![Face Interpolation](images/interpolation.png)
-```
 
 ## Future Work
 
