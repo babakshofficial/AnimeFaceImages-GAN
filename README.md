@@ -156,6 +156,6 @@ Contributions are welcome! If you have suggestions for improvements or want to c
    
 ## Acknowledgements
 
-* The PyTorch team for their excellent deep learning framework.
+* The PyTorch and Tensorflow teams for their excellent deep learning frameworks.
 * The creators of the Anime Face Dataset.
 * Inspiration from various GAN tutorials and research papers.
